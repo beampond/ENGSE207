@@ -1,0 +1,29 @@
+# Week 6 — Docker Compose
+# แสดง N-Tier: แต่ละ tier อยู่คนละ container
+
+version: '3.8'
+
+services:
+
+  # Tier 2+3: Web + App Server
+  app:
+    build: .
+    container_name: taskboard-app
+    ports:
+      - "3002:3002"
+    volumes:
+      # Mount database ออกมา ข้อมูลไม่หายเมื่อ restart
+      - taskboard-data:/app/database
+    environment:
+      - PORT=3002
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3002/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  taskboard-data:
+    name: taskboard-data

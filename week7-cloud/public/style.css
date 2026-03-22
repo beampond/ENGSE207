@@ -1,0 +1,66 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: #1a1a2e; min-height: 100vh; }
+
+/* header */
+header { background: #1a1a2e; padding: 0 28px; height: 58px; display: flex; align-items: center; }
+.header-inner { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+header h1 { color: #fff; font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.arch-badge { font-size: 0.68rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; letter-spacing: .04em; }
+.badge-mono   { background: #e94560; color: #fff; }
+.badge-layer  { background: #7c3aed; color: #fff; }
+.badge-cs     { background: #0891b2; color: #fff; }
+.badge-ntier  { background: #059669; color: #fff; }
+.badge-cloud  { background: #d97706; color: #fff; }
+
+/* stats */
+.stats { display: flex; gap: 14px; }
+.stat { color: #aaa; font-size: 0.8rem; }
+.stat b { color: #fff; }
+
+/* form */
+.form-section { background: #fff; margin: 22px 28px 0; padding: 18px 22px; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.form-section h2 { font-size: 0.88rem; color: #666; margin-bottom: 10px; font-weight: 500; }
+.form-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.form-row input, .form-row select { flex: 1; min-width: 130px; padding: 8px 13px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.86rem; outline: none; transition: border-color .2s; }
+.form-row input:focus, .form-row select:focus { border-color: #3b82f6; }
+
+/* buttons */
+.btn { padding: 8px 18px; border: none; border-radius: 8px; font-size: 0.86rem; font-weight: 500; cursor: pointer; transition: opacity .15s, transform .1s; }
+.btn:active { transform: scale(.97); }
+.btn-primary   { background: #3b82f6; color: #fff; }
+.btn-primary:hover { opacity: .88; }
+.btn-secondary { background: #e5e7eb; color: #374151; }
+.btn-secondary:hover { background: #d1d5db; }
+.btn-edit      { background: #eff6ff; color: #2563eb; padding: 4px 10px; font-size: 0.76rem; }
+.btn-del       { background: #fee2e2; color: #dc2626; padding: 4px 10px; font-size: 0.76rem; }
+
+/* board */
+.board { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; padding: 18px 28px 32px; }
+.column { background: #fff; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); display: flex; flex-direction: column; min-height: 280px; }
+.col-header { padding: 13px 16px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 0.88rem; border-radius: 12px 12px 0 0; }
+.col-header.todo { background: #fffbeb; color: #92400e; border-bottom: 2px solid #fcd34d; }
+.col-header.prog { background: #eff6ff; color: #1e40af; border-bottom: 2px solid #93c5fd; }
+.col-header.done { background: #ecfdf5; color: #065f46; border-bottom: 2px solid #6ee7b7; }
+.col-count { background: rgba(0,0,0,.07); border-radius: 12px; padding: 1px 7px; font-size: 0.76rem; }
+.cards { padding: 10px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+
+/* card */
+.card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 11px 13px; transition: box-shadow .15s; }
+.card:hover { box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+.card-title { font-size: 0.88rem; font-weight: 600; margin-bottom: 3px; }
+.card-desc  { font-size: 0.76rem; color: #6b7280; margin-bottom: 8px; min-height: 14px; }
+.card-meta  { font-size: 0.68rem; color: #9ca3af; margin-bottom: 7px; }
+.card-actions { display: flex; gap: 5px; justify-content: flex-end; }
+.empty-col  { text-align: center; color: #ccc; font-size: 0.8rem; padding: 24px; }
+
+/* modal */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 100; align-items: center; justify-content: center; }
+.modal-overlay.active { display: flex; }
+.modal { background: #fff; border-radius: 14px; padding: 26px; width: 400px; max-width: 92vw; display: flex; flex-direction: column; gap: 9px; box-shadow: 0 8px 32px rgba(0,0,0,.18); }
+.modal h3 { font-size: 1rem; margin-bottom: 4px; }
+.modal label { font-size: 0.8rem; color: #6b7280; margin-bottom: -4px; }
+.modal input, .modal select { padding: 8px 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.86rem; outline: none; }
+.modal input:focus, .modal select:focus { border-color: #3b82f6; }
+.modal-actions { display: flex; gap: 9px; justify-content: flex-end; margin-top: 4px; }
+
+@media (max-width: 680px) { .board { grid-template-columns: 1fr; } .stats { display: none; } }

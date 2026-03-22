@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>TaskBoard — Week 4 Layered</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <h1>📋 TaskBoard <span class="arch-badge badge-layer">Layered Architecture</span></h1>
+    <div class="stats">
+      <span class="stat">Total <b id="s-total">—</b></span>
+      <span class="stat">Todo <b id="s-todo">—</b></span>
+      <span class="stat">In Progress <b id="s-prog">—</b></span>
+      <span class="stat">Done <b id="s-done">—</b></span>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="form-section">
+    <h2>เพิ่ม Task ใหม่</h2>
+    <form id="addForm">
+      <div class="form-row">
+        <input id="fTitle" placeholder="ชื่อ Task *" required />
+        <input id="fDesc"  placeholder="รายละเอียด (ถ้ามี)" />
+        <select id="fStatus">
+          <option value="todo">📌 Todo</option>
+          <option value="in_progress">🔄 In Progress</option>
+          <option value="done">✅ Done</option>
+        </select>
+        <button class="btn btn-primary" type="submit">+ เพิ่ม</button>
+      </div>
+    </form>
+  </section>
+  <section class="board">
+    <div class="column">
+      <div class="col-header todo"><span>📌 Todo</span><span class="col-count" id="c-todo">0</span></div>
+      <div class="cards" id="cards-todo"></div>
+    </div>
+    <div class="column">
+      <div class="col-header prog"><span>🔄 In Progress</span><span class="col-count" id="c-in_progress">0</span></div>
+      <div class="cards" id="cards-in_progress"></div>
+    </div>
+    <div class="column">
+      <div class="col-header done"><span>✅ Done</span><span class="col-count" id="c-done">0</span></div>
+      <div class="cards" id="cards-done"></div>
+    </div>
+  </section>
+</main>
+<div class="modal-overlay" id="overlay">
+  <div class="modal">
+    <h3>แก้ไข Task</h3>
+    <input type="hidden" id="eId" />
+    <label>ชื่อ Task</label><input id="eTitle" />
+    <label>รายละเอียด</label><input id="eDesc" />
+    <label>สถานะ</label>
+    <select id="eStatus">
+      <option value="todo">📌 Todo</option>
+      <option value="in_progress">🔄 In Progress</option>
+      <option value="done">✅ Done</option>
+    </select>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" id="btnCancel">ยกเลิก</button>
+      <button class="btn btn-primary"   id="btnSave">บันทึก</button>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
