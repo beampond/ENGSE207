@@ -9,7 +9,8 @@
 
 | ชื่อ | อีเมล | บทบาท |
 |------|-------|-------|
-| ณัฏฐพงษ์ เรือนเทศ | nattapong.ru66@live.rmutl.ac.th | นักศึกษา |
+| พิษณ์ สินธรสวัสดิ์ | pich_si67@live.rmutl.ac.th | Tester |
+| ณัฏฐพงษ์ เรือนเทศ | nattapong.ru66@live.rmutl.ac.th | System Analyst (SA) |
 
 ---
 
